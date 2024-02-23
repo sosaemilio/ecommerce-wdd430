@@ -1,5 +1,7 @@
 const { db } = require('@vercel/postgres');
 const { products } = require('../src/lib/data.js');
+const { v4: uuidv4 } = require('uuid');
+
 
 
 async function seedProducts(client) {
@@ -13,7 +15,7 @@ async function seedProducts(client) {
         product VARCHAR(255) NOT NULL,
         category VARCHAR(255) NOT NULL,
         image VARCHAR(255) NOT NULL,
-        price NUMERIC(5,2) NOT NULL,
+        price NUMERIC(5,2) NOT NULL
       );
     `;
 
@@ -24,7 +26,7 @@ async function seedProducts(client) {
       products.map(
         (product) => client.sql`
         INSERT INTO products (id, product, category, image, price)
-        VALUES (${product.id}, ${product.product}, ${product.category}, ${product.image}, ${product.price})
+        VALUES (${uuidv4()}, ${product.product}, ${product.category}, ${product.image}, ${product.price})
         ON CONFLICT (id) DO NOTHING;
       `,
       ),

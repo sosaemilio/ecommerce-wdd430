@@ -31,10 +31,10 @@ export async function fetchProductById(id: string) {
     const data = await sql<Product>`
       SELECT
         products.id,
-        products.products,
+        products.product,
         products.category,
         products.image,
-        products.price,
+        products.price
       FROM products
       WHERE products.id = ${id};
     `;
@@ -43,10 +43,31 @@ export async function fetchProductById(id: string) {
       ...product,
     }));
 
-    console.log(product); // Invoice is an empty array []
+    console.log(product); 
     return product[0];
   } catch (error) {
     console.error('Database Error:', error);
-    throw new Error('Failed to fetch invoice.');
+    throw new Error('Failed to fetch product.');
+  }
+}
+
+export async function fetchProductsByCategory(category: string) {
+  noStore();
+  try {
+    const data = await sql<Product>`
+      SELECT
+        products.id,
+        products.product,
+        products.category,
+        products.image,
+        products.price
+      FROM products
+      WHERE products.category = ${category};
+    `;
+    return data.rows;
+    
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch product.');
   }
 }
