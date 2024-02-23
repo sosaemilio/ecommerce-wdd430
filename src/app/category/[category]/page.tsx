@@ -6,8 +6,6 @@ export default async function Category({ params }: { params: { category: string 
     const category = params.category;
     const products: [] = await fetchProductsByCategory(category);
 
-    console.log(typeof products)
-
     return (
       <div className={styles.container}>
         <h1 className={styles.title}>Results for {category}</h1>
