@@ -36,24 +36,24 @@ export default function Cart() {
             </div>
             {cart.map((item) => (
                 <div className={styles.body}>
-                <div className={styles.image}>
-                    <Image src={item.image} height="90" width="65" />
-                </div>
-                <p>{item.product}</p>
-                <p>$ {item.price}</p>
-                <p>{item.quantity}</p>
-                <div className={styles.buttons}>
-                    <button onClick={() => dispatch(incrementQuantity(item.id))}>
-                    +
-                    </button>
-                    <button onClick={() => dispatch(decrementQuantity(item.id))}>
-                    -
-                    </button>
-                    <button onClick={() => dispatch(removeFromCart(item.id))}>
-                    x
-                    </button>
-                </div>
-                <p>$ {item.quantity * item.price}</p>
+                  <div className={styles.image}>
+                      <Image src={item.image} height="90" width="65" />
+                  </div>
+                  <p>{item.product}</p>
+                  <p>$ {item.price}</p>
+                  <p>{item.quantity}</p>
+                  <div className={styles.buttons}>
+                      <button onClick={() => dispatch(incrementQuantity(item.id))}>
+                      +
+                      </button>
+                      <button onClick={() => dispatch(decrementQuantity(item.id))}>
+                      -
+                      </button>
+                      <button onClick={() => dispatch(removeFromCart(item.id))}>
+                      x
+                      </button>
+                  </div>
+                  <p>$ {item.quantity * item.price}</p>
                 </div>
             ))}
             <h2>Grand Total: $ {getTotalPrice()}</h2>
