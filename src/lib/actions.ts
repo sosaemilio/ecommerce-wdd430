@@ -4,7 +4,7 @@ import { sql } from '@vercel/postgres';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
  
-export async function createInvoice(prevState: State, formData: FormData) {
+export async function createInvoice(formData: FormData) {
   // Validate form using Zod
   const validatedFields = {
     customerId: formData.get('customerId'),
