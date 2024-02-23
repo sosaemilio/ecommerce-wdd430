@@ -1,7 +1,5 @@
-import { sql } from '@vercel/postgres';
-import {
-  Product
-} from './definitions';
+import {sql} from "@vercel/postgres";
+import { Product } from './definitions';
 import { unstable_noStore as noStore } from 'next/cache';
 
 export async function fetchProducts() {
