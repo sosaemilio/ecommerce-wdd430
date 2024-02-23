@@ -1,12 +1,7 @@
-"use client"
 import CategoryCard from "@/components/CategoryCard/CategoryCard";
-import { Provider } from "react-redux";
-import makeStore from "@/lib/redux/store";
-
 
 export default function Home() {
   return (
-    <Provider store={makeStore}>
       <main className="container">
         <div className="small">
           <CategoryCard image="/images/category/uKQqsuA.jpg" name="Xbox" />
@@ -21,6 +16,5 @@ export default function Home() {
           />
         </div>
       </main>
-    </Provider>
   );
 }
