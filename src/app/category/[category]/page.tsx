@@ -4,7 +4,7 @@ import styles from "./Shop.module.css"
 
 export default async function Category({ params }: { params: { category: string } }) {
     const category = params.category;
-    const products: [] = await fetchProductsByCategory(category);
+    const products = await fetchProductsByCategory(category);
 
     return (
         <div className={styles.container}>

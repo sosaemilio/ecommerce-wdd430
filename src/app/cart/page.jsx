@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import { useSelector, useDispatch, Provider } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
   incrementQuantity,
   decrementQuantity,
@@ -35,7 +35,7 @@ export default function Cart() {
                 <div>Total Price</div>
             </div>
             {cart.map((item) => (
-                <div className={styles.body}>
+                <div className={styles.body} key={item.id}>
                   <div className={styles.image}>
                       <Image src={item.image} height="90" width="65" />
                   </div>
