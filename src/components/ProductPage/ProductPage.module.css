@@ -1,0 +1,45 @@
+.productContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.productContainer h1 {
+    font-size: 34px;
+}
+
+.productContainer h2 {
+    font-size: 28px;
+}
+
+.productContainer h3 {
+    font-size: 28px;
+    margin: 5px 0px;
+}
+
+.button {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.75rem 0;
+    background: transparent;
+    text-transform: uppercase;
+    border: 2px solid #76c9bb;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #76c9bb;
+    color: white;
+}
+
+@media screen and (min-width: 1000px) {
+    .productContainer {
+        display: flex;
+        flex-direction: row;
+        margin: 0 10rem;
+    }
+
+    .productImage {
+        flex-grow: 3;
+    }
+}

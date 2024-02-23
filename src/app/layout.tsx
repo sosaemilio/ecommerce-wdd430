@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
           <ReduxProvider>
             <Navbar/>
-            {children}
+              {children}
             <Footer/>
           </ReduxProvider>
       </body>

@@ -16,7 +16,7 @@ export default function Navbar() {
 	return (
 	  <nav className={styles.navbar}>
 		{/* <h6 className={styles.logo}>GamesKart</h6> */}
-		<Image src="/images/logo.png" height={30} width={121}/>
+		<Image src="/images/logo.png" height={34} width={121}/>
 		<ul className={styles.links}>
 		  <li className={styles.navlink}>
 			<Link href="/">Home</Link>
@@ -26,7 +26,7 @@ export default function Navbar() {
 		  </li>
 		  <li className={styles.navlink}>
 			<Link href="/cart">
-			  <p>Cart ({getItemsCount()})</p>
+			  <p>Cart({getItemsCount()})</p>
 			</Link>
 		  </li>
 		</ul>
