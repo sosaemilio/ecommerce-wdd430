@@ -41,8 +41,6 @@ export async function fetchProductById(id: string) {
 
     const product = data.rows.map((product) => ({
       ...product,
-      // Convert amount from cents to dollars
-      amount: product.amount,
     }));
 
     console.log(product); // Invoice is an empty array []
