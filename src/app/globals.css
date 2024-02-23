@@ -41,13 +41,22 @@
   padding: 0 2rem;
 }
 
-.small {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+@media screen and (min-width 1000px) {
+  .small {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .large {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-.large {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.small, .large {
+  display: flex;
+  flex-direction: column;
 }
+
+
 
