@@ -1,0 +1,8 @@
+.footerLinks {
+    display: flex;
+    justify-content: center;
+}
+
+.footerLinks a {
+    padding: 10px;
+}
